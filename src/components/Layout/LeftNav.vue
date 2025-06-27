@@ -72,6 +72,10 @@ const handleNavClick = (key: string) => {
   border-bottom-right-radius: 24px;
   z-index: 10;
   margin-left: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .logo-gradient {

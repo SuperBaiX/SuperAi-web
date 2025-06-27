@@ -45,7 +45,7 @@ const appList = computed(() => store.state.teamApp.list)
 const showCreate = ref(false)
 
 //navsApp值
-const getNavsApp = computed(() => store.state.navsApp.list)
+const selectedKey = computed(() => store.state.navsApp.selectedKey)
 
 // 搜索事件处理函数（已无实际用处，保留结构）
 function onSearch(keyword: string) {
