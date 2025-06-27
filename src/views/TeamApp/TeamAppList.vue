@@ -44,6 +44,9 @@ const appList = computed(() => store.state.teamApp.list)
 // 控制新建应用弹窗显示的响应式变量
 const showCreate = ref(false)
 
+//navsApp值
+const getNavsApp = computed(() => store.state.navsApp.list)
+
 // 搜索事件处理函数（已无实际用处，保留结构）
 function onSearch(keyword: string) {
   store.dispatch('teamApp/search', keyword) // 分发Vuex action进行搜索
@@ -58,6 +61,7 @@ function onCreate() {
 }
 // 应用卡片点击事件处理函数
 function onAppClick(app: any) {
+  console.log("app:::",app)
   // 这里可以实现跳转详情页或弹窗等逻辑
 }
 </script>
@@ -78,21 +82,20 @@ function onAppClick(app: any) {
 }
 
 .left-nav {
-  width: 60px;
-  min-width: 60px;
-  background: #23233a;
+  width: 80px;
+  min-width: 80px;
+  background: #f7f8fa;
   color: #fff;
   height: 100vh;
   box-sizing: border-box;
   padding: 12px 0 0 0;
-  border-right: 1px solid #22223b;
 }
 
 .side-menu {
   width: 200px;
   min-width: 200px;
-  background: #22223b;
-  color: #fff;
+  background: #fff;
+  color: #000000;
   height: 100vh;
   padding-top: 24px;
   box-sizing: border-box;

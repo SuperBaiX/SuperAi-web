@@ -4,16 +4,21 @@
 import { GetterTree } from 'vuex'
 // 引入根state类型
 import type { RootState } from './modules/user'
+import type { navsAppState } from './modules/navsApp'
 
 // 定义全局getters对象，类型为GetterTree
 const getters: GetterTree<RootState, RootState> = {
-  // 示例：获取用户名称（假设user模块已注册）
-  // @ts-ignore
+  // 获取用户名称
   userName: (state) => {
-    // 需确保user模块已注册到store
     // @ts-ignore
-    return state.user?.name || '' // 返回user模块的name属性
-  }
+    return state.user?.name || ''
+  },
+
+  // 根据key获取左侧菜单对象
+  getNavsAppByKey: (state) => (key: string) => {
+    // @ts-ignore
+    return state.navsApp?.list?.find(item => item.key === key)
+  },
 }
 
-export default getters // 导出全局getters 
+export default getters // 导出全局getters

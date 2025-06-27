@@ -32,28 +32,50 @@ function onSelect(key: string) {
 
 <style scoped>
 .side-menu {
-  width: 200px;
-  background: #22223b;
-  color: #fff;
+  width: 220px;
+  min-width: 200px;
+  background: #f7faff;   /* 浅灰蓝，整体明亮 */
+  color: #333;
   height: 100vh;
-  padding-top: 24px;
+  padding: 32px 0 0 0;
+  box-sizing: border-box;
+  border-right: 1px solid #e0e6ed;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .menu-logo {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 32px;
+  color: #409eff;
 }
 ul {
   list-style: none;
-  padding: 0;
+  padding: 0 0 0 8px;
+  margin: 0;
+  flex: 1;
 }
 li {
-  padding: 12px 32px;
+  padding: 12px 24px;
+  border-radius: 8px 0 0 8px;
+  margin-bottom: 4px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent; /* 默认无背景 */
 }
 li.active, li:hover {
-  background: #4a4e69;
+  background: #eaf3ff;
+  color: #409eff;
+  font-weight: bold;
+}
+.menu-divider {
+  height: 1px;
+  background: #e0e6ed;
+  margin: 16px 0;
 }
 </style> 
