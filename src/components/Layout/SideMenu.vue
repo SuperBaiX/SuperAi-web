@@ -5,8 +5,8 @@
 <template>
   <nav class="side-menu">
 <!--    <div class="menu-logo">X</div>-->
-    <ul>
-      <li v-for="item in menu" :key="item.key" :class="{active: item.key === active}" @click="onSelect(item.key)">
+    <ul class="side-menu-list">
+      <li v-for="item in menu" :key="item.key" :class="['side-menu-item', {active: item.key === active}]" @click="onSelect(item.key)">
         <span>{{ item.label }}</span>
       </li>
     </ul>
